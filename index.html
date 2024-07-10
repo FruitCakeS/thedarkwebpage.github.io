@@ -8,7 +8,7 @@
   <script>
     window.addEventListener('message', (message) => {
       alert(message.origin);
-      if (message.origin === 'http://www.bbb.com') {
+      if (message.origin === 'null') {
         const data = JSON.parse(message.data);
         const { testLocalStorage } = data;
         if (testLocalStorage){
