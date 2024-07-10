@@ -3,12 +3,18 @@
     <title>This is the title of the webpage!</title>
   </head>
   
+  <body>
+    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+    <div>
+      <button id="show-storage-button">Show storage</button>
+      <div id="storage-values"></div>
+    </div>
+  </body>
+  
   <script>
-    function showStorage() {
+    document.getElementById("show-storage-button").onclick = function() {
       const output = document.getElementById("storage-values");
-      output.textContent = "localStorage:"+window.localStorage.getItem('testLocalStorage')+"
-      cookies:"+document.cookie;
-    }
+      output.textContent = "localStorage:"+window.localStorage.getItem('testLocalStorage')+"cookies:"+document.cookie;}
     
     window.addEventListener('message', (message) => {
       const data = JSON.parse(message.data);
@@ -58,11 +64,4 @@
       window.localStorage.setItem('testLocalStorage', 'differently');
     }
   </script>
-  <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-    <div>
-      <button onclick="showStorage()">Show storage</button>
-      <div id="storage-values"></div>
-    </div>
-  </body>
 </html>
