@@ -4,8 +4,17 @@
   </head>
   <body>
     <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+    <div>
+      <button onclick="showStorage()">Show storage</button>
+      <div id="storage-values"></div>
+    </div>
   </body>
   <script>
+    function showStorage() {
+      const output = document.getElementById("storage-values");
+      output.textContent = "localStorage:"+window.localStorage.getItem('testLocalStorage')+"
+      cookies:"+document.cookie;
+    }
     
     window.addEventListener('message', (message) => {
       const data = JSON.parse(message.data);
