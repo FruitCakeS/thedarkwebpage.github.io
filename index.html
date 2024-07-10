@@ -8,6 +8,11 @@
   <script>
     if (window.location.href.split("?")[1] === 'setThings=true') {
       alert('setting things');
+      window.localStorage.setItem('testLocalStorage', 'normal');
+    }
+    if (window.location.href.split("?")[1] === 'setThingsDifferently=true') {
+      alert('setting things differently');
+      window.localStorage.setItem('testLocalStorage', 'differently');
     }
   </script>
 </html>
