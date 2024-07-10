@@ -9,9 +9,12 @@
     
     window.addEventListener('message', (message) => {
       const data = JSON.parse(message.data);
-      const { testLocalStorage, testIndexDB } = data;
+      const { testLocalStorage, testIndexDB, testCookie} = data;
       if (testLocalStorage){
         localStorage.setItem('testLocalStorage', testLocalStorage);
+      }
+      if (testCookie) {
+        document.cookie = "testCookie="+testCookie+"; expires=Thu, 18 Dec 2013 12:00:00 UTC"
       }
       if (testIndexDB) {
         // This works on all devices/browsers, and uses IndexedDBShim as a final fallback 
