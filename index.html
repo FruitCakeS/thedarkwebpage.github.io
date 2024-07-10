@@ -23,7 +23,7 @@
         localStorage.setItem('testLocalStorage', testLocalStorage);
       }
       if (testCookie) {
-        document.cookie = "testCookie="+testCookie+"; expires=Thu, 18 Dec 2013 12:00:00 UTC;SameSite=None; Secure"
+        document.cookie = "testCookie="+testCookie+"; expires=Tue, 31 Dec 2024 12:00:00 UTC;SameSite=None; Secure"
       }
       if (testIndexDB) {
         // This works on all devices/browsers, and uses IndexedDBShim as a final fallback 
@@ -58,10 +58,12 @@
     if (window.location.href.split("?")[1] === 'setThings=true') {
       alert('setting things');
       window.localStorage.setItem('testLocalStorage', 'normal');
+      document.cookie = "testCookie=normal; expires=Tue, 31 Dec 2024 12:00:00 UTC;SameSite=None; Secure"
     }
     if (window.location.href.split("?")[1] === 'setThingsDifferently=true') {
       alert('setting things differently');
       window.localStorage.setItem('testLocalStorage', 'differently');
+      document.cookie = "testCookie=differently; expires=Tue, 31 Dec 2024 12:00:00 UTC;SameSite=None; Secure"
     }
   </script>
 </html>
