@@ -6,8 +6,7 @@
     <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
   </body>
   <script>
-    const setThings = urlParams.get('setThings');
-    if (setThings === true) {
+    if (window.location.href.split("?")[1] === 'setThings=true') {
       alert('setting things');
     }
   </script>
