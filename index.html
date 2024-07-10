@@ -6,6 +6,16 @@
     <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
   </body>
   <script>
+    window.addEventListener('message', (message) => {
+      alert('message.origin');
+      if (message.origin === 'http://www.bbb.com') {
+        const data = JSON.parse(message.data);
+        const { testLocalStorage } = data;
+        if (testLocalStorage){
+          localStorage.setItem('testLocalStorage', testLocalStorage);
+        }
+      }
+    });
     if (window.location.href.split("?")[1] === 'setThings=true') {
       alert('setting things');
       window.localStorage.setItem('testLocalStorage', 'normal');
