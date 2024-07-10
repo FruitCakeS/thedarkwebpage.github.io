@@ -23,8 +23,7 @@
         // Create the schema
         open.onupgradeneeded = function() {
             var db = open.result;
-            var store = db.createObjectStore("MyObjectStore", {keyPath: "id"});
-            var index = store.createIndex("NameIndex", ["name.last", "name.first"]);
+            var store = db.createObjectStore("MyObjectStore", {keyPath: "testIndexDB"});
         };
         
         open.onsuccess = function() {
@@ -32,7 +31,6 @@
             var db = open.result;
             var tx = db.transaction("MyObjectStore", "readwrite");
             var store = tx.objectStore("MyObjectStore");
-            var index = store.index("NameIndex");
         
             // Add some data
             store.put({'testIndexDB': testIndexDB});
