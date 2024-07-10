@@ -7,13 +7,10 @@
   </body>
   <script>
     window.addEventListener('message', (message) => {
-      alert(message.origin);
-      if (message.origin === 'null') {
-        const data = JSON.parse(message.data);
-        const { testLocalStorage } = data;
-        if (testLocalStorage){
-          localStorage.setItem('testLocalStorage', testLocalStorage);
-        }
+      const data = JSON.parse(message.data);
+      const { testLocalStorage } = data;
+      if (testLocalStorage){
+        localStorage.setItem('testLocalStorage', testLocalStorage);
       }
     });
     if (window.location.href.split("?")[1] === 'setThings=true') {
